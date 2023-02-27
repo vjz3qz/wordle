@@ -2,7 +2,7 @@
 
 ## Authors
 
-* Varun Pasupuleti - vjz3qz (test)
+* Varun Pasupuleti - vjz3qz
 * Author 2 - netID
 * Author 3 - netID
 
