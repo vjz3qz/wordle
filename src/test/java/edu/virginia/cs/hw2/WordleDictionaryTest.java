@@ -18,26 +18,31 @@ public class WordleDictionaryTest {
     }
 
     @Test
-    @DisplayName("checks if one word dict has word and doesn't")
+    @DisplayName("checks if one word dict has word and doesn't and size")
     public void testOneWordDictionary() {
         InputStream inputStream = WordleDictionaryTest.class.getResourceAsStream(ONE_WORD_DICTIONARY_FILENAME);
         testDictionary.addWordsFromInputStream(inputStream);
-        assertEquals(1, testDictionary.getDictionarySize());
-        assertTrue(testDictionary.containsWord("BALDY"));
-        assertFalse(testDictionary.containsWord("CRATE"));
+        assertEquals(1, testDictionary.getDictionarySize(), "returned dict size other than 1");
+        assertTrue(testDictionary.containsWord("BALDY"), "returned contains BALDY as False");
+        assertFalse(testDictionary.containsWord("CRATE"), "returned contains CRATE as True");
     }
 
     @Test
-    @DisplayName("checks contain word for empty dictionary")
-    public void testContainsWordForEmptyDictionary()
+    @DisplayName("checks contain word and size for empty dictionary")
+    public void testEmptyDictionary()
     {
-        assertFalse(testDictionary.containsWord("BALDY"));
+        assertEquals(0, testDictionary.getDictionarySize(), "returned dict size other than 0");
+        assertFalse(testDictionary.containsWord("BALDY"), "returned Contains BALDY when empty");
     }
 
     @Test
-    @DisplayName("testing if A123Z is a legal word, should be false")
-    public void testLegalWord()
+    @DisplayName("testing illegal words: A123Z, !KALE, crate, null, and CRAB")
+    public void testIllegalWord()
     {
-        assertFalse(testDictionary.isLegalWordleWord("A123Z"));
+        assertFalse(testDictionary.isLegalWordleWord("A123Z"), "returned A123Z true");
+        assertFalse(testDictionary.isLegalWordleWord("!KALE"), "returned !KALE true");
+        assertFalse(testDictionary.isLegalWordleWord("crate"), "returned crate true");
+        assertFalse(testDictionary.isLegalWordleWord(null), "returned null true");
+        assertFalse(testDictionary.isLegalWordleWord("CRAB"), "returned CRAB true");
     }
 }
