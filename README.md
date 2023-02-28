@@ -2,19 +2,19 @@
 
 ## Authors
 
-* Varun Pasupuleti - vjz3qz
-* Sunny Chanda - ufx2ju
+* Author 1 - netID
+* Author 2 - netID
 * Author 3 - netID
 
 
 ## High-Level Overview
 All classes are in the package edu.virginia.cs.hw2. Here are the structure of the starter code:
-* **Main Class:** 
+* **Main Class:**
   * `CommandLineWordle` - when you start the assignment, this will be unrunnable. Once you complete the assignment, you should be able to run this file to play Wordle. Consider this your "System test" class.
 * **Core Functionality Classes:**
   * `GameState` - maintains the state of a Wordle Game.
   * `WordleDictionary` - used for maintaining a set of words, such as words that are legal guesses in Wordle. Words are typically added via file.
-  * `GuessResult` - responsible for generating the "color" output of Wordle.  
+  * `GuessResult` - responsible for generating the "color" output of Wordle.
   * `DefaultDictionaryFactory` - used for getting "default" dictionaries.
 * **Enumerated Types:**
   * `LetterResult` - The result from a single cell (or letter) in Wordle
@@ -41,7 +41,7 @@ All classes are in the package edu.virginia.cs.hw2. Here are the structure of th
 
 ## A Note about DefaultDictionaryFactory
 This class is used to create "default" dictionaries for Wordle. It has two public functions:
-* `getDefaultGuessesDictionary()` - Get the default "acceptable guesses" dictionary. 
+* `getDefaultGuessesDictionary()` - Get the default "acceptable guesses" dictionary.
   * This dictionary in theory contains all five letter words in the English language. Many of these words are obscure, and so it's not suitable to use this dictionary to generate random answers. For instance, it contains words like: _aahed_, _zunis_, _tares_, and _ergot_.
   * Loads from `src/main/resources/dictionary.txt`
   * If working correctly, the returned dictionary has 15920 words
@@ -52,4 +52,3 @@ This class is used to create "default" dictionaries for Wordle. It has two publi
 * Usage Example:
   * `DefaultDictionaryFactory factory = new DefaultDictionaryFactory();`
   * `WordleDictionary dict = factory.getDefaultGuessesDictionary();`
-

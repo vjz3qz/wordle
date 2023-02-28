@@ -20,7 +20,7 @@ public class DefaultDictionaryFactory {
 
     public WordleDictionary getDefaultAnswersDictionary() {
         if (ifDictionaryNotCreatedYet(defaultAnswersDictionary)) {
-            defaultAnswersDictionary = new WordleDictionary();
+            defaultGuessesDictionary = new WordleDictionary();
             InputStream inputStream = getResourceAsInputStream(DEFAULT_ANSWERS_DICTIONARY_FILENAME);
             addInputStreamWordsToDictionary(inputStream, defaultAnswersDictionary);
         }
@@ -31,8 +31,8 @@ public class DefaultDictionaryFactory {
      * Front-loads reading the default dictionaries into memory
      */
     public void loadDefaultDictionaries() {
-        defaultGuessesDictionary = getDefaultGuessesDictionary();
-        defaultAnswersDictionary = getDefaultAnswersDictionary();
+        getDefaultGuessesDictionary();
+        getDefaultAnswersDictionary();
     }
 
     private boolean ifDictionaryNotCreatedYet(WordleDictionary dictionary) {
