@@ -30,7 +30,15 @@ public class GuessResult {
         if (guess.equals(answer)) {
             return getCorrectAnswerArray();
         }
-
+        for (int i = 0; i < GUESS_RESULT_ARRAY_SIZE; i++) {
+            char ch = guess.charAt(i); //gets character at each index
+            if(answer.charAt(i)==ch)
+                guessResult[i]=LetterResult.GREEN;
+            else if(answer.indexOf(ch)>=0)
+                guessResult[i]=LetterResult.YELLOW;
+            else
+                guessResult[i]=LetterResult.GRAY;
+        }
         return guessResult;
         //TODO: Currently incomplete - implement via TDD - Write Tests in GuessResultsTest.java
     }
