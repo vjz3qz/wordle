@@ -18,11 +18,13 @@ public class WordleDictionaryTest {
     }
 
     @Test
+    @DisplayName("checks if one word dict has word and doesn't and size")
     public void testOneWordDictionary() {
         InputStream inputStream = WordleDictionaryTest.class.getResourceAsStream(ONE_WORD_DICTIONARY_FILENAME);
         testDictionary.addWordsFromInputStream(inputStream);
-        assertEquals(1, testDictionary.getDictionarySize());
-        assertTrue(testDictionary.containsWord("BALDY"));
+        assertEquals(1, testDictionary.getDictionarySize(), "returned dict size other than 1");
+        assertTrue(testDictionary.containsWord("BALDY"), "returned contains BALDY as False");
+        assertFalse(testDictionary.containsWord("CRATE"), "returned contains CRATE as True");
     }
 
     @Test
