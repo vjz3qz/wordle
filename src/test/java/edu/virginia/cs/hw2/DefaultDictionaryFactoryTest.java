@@ -28,5 +28,13 @@ public class DefaultDictionaryFactoryTest {
         assertNotNull(defaultAnswersDictionary, "answer dict is null");
     }
 
+    @Test
+    @DisplayName("tests if default dictionaries are set")
+    public void testLoadDefaultDictionaries()
+    {
+        testFactory.loadDefaultDictionaries();
+        testGetDefaultGuessesDictionary();
+        testGetDefaultAnswersDictionary();
+    }
 
 }
