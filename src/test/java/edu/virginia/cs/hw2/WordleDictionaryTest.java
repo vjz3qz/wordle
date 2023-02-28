@@ -62,4 +62,13 @@ public class WordleDictionaryTest {
         assertThrows(IllegalWordException.class,()->testDictionary.addWord("crab"));
     }
 
+    @Test
+    @DisplayName("add legal words: crate and CRATE")
+    public void testAddLegalWord()
+    {
+        assertDoesNotThrow(()->testDictionary.addWord("crate"));
+        assertDoesNotThrow(()->testDictionary.addWord("CRATE"));
+    }
 }
+
+
