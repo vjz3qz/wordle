@@ -12,9 +12,29 @@ public class DefaultDictionaryFactoryTest {
         testFactory = new DefaultDictionaryFactory();
     }
 
+
     @Test
+    @DisplayName("test if default guesses not null")
     public void testGetDefaultGuessesDictionary() {
         WordleDictionary defaultGuessesDictionary = testFactory.getDefaultGuessesDictionary();
-        assertNotNull(defaultGuessesDictionary);
+        assertNotNull(defaultGuessesDictionary, "guesses dict is null");
     }
+
+    @Test
+    @DisplayName("test if default answers not null")
+    public void testGetDefaultAnswersDictionary()
+    {
+        WordleDictionary defaultAnswersDictionary = testFactory.getDefaultAnswersDictionary();
+        assertNotNull(defaultAnswersDictionary, "answer dict is null");
+    }
+
+    @Test
+    @DisplayName("tests if default dictionaries are set")
+    public void testLoadDefaultDictionaries()
+    {
+        testFactory.loadDefaultDictionaries();
+        testGetDefaultGuessesDictionary();
+        testGetDefaultAnswersDictionary();
+    }
+
 }
