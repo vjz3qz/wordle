@@ -13,6 +13,7 @@ public class DefaultDictionaryFactoryTest {
     }
 
     @Test
+    @DisplayName("test if default guesses not null")
     public void testGetDefaultGuessesDictionary() {
         WordleDictionary defaultGuessesDictionary = testFactory.getDefaultGuessesDictionary();
         assertNotNull(defaultGuessesDictionary);
