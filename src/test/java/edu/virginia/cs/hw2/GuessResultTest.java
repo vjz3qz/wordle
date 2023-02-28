@@ -44,6 +44,15 @@ class GuessResultTest {
         assertEquals("gYYYg", getLetterResultArrayAsString(guessResult));
     }
 
+    @Test
+    @DisplayName("illegal guess result test")
+    public void testLetterResultIllegalAnswer()
+    {
+        givenInputGuessAndAnswer("crab", "CRATE");
+        LetterResult[] guessResult = testGuessResult.getGuessResult();
+        assertEquals("gYYYg", getLetterResultArrayAsString(guessResult));
+    }
+
     private void givenInputGuessAndAnswer(String guess, String answer) {
         testGuessResult.setGuess(guess);
         testGuessResult.setAnswer(answer);
