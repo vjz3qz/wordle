@@ -14,7 +14,12 @@ public class GuessResult {
     }
 
     public void setAnswer(String answer) {
-        this.answer = answer.toUpperCase();
+        if(WordleDictionary.isLegalWordleWord(answer))
+            this.answer = answer.toUpperCase();
+        else {
+            this.answer = null;
+            throw new IllegalWordException("Answer parameter is illegal. Answer is set to null. Please input a new answer.");
+        }
     }
 
     public String getGuess() {
@@ -26,8 +31,7 @@ public class GuessResult {
             this.guess = guess.toUpperCase();
         else {
             this.guess = null;
-            IllegalWordException e=new IllegalWordException("Guess parameter is illegal. Guess is set to null. Please input a new guess.");
-            throw e;
+            throw new IllegalWordException("Guess parameter is illegal. Guess is set to null. Please input a new guess.");
         }
     }
 
