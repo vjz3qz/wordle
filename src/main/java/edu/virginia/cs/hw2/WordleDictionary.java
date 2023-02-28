@@ -50,8 +50,6 @@ public class WordleDictionary {
     public boolean isLegalWordleWord(String word) {
         if (word == null)
             return false;
-
-
         else if (word.length() != ALLOWED_WORD_SIZE) //wrong size word
             return false;
         else {
@@ -63,8 +61,6 @@ public class WordleDictionary {
             }
             return true;
         }
-
-
     }
 
 
