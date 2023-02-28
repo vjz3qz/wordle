@@ -50,6 +50,13 @@ class GuessResultTest {
         LetterResult[] guessResult= testGuessResult.getGuessResult();
         assertEquals("GGGYg", getLetterResultArrayAsString(guessResult));
     }
+    @Test
+    @DisplayName("Guess: SALTS, answer: SALSA")
+    public void testSalsaCaseOther(){
+        givenInputGuessAndAnswer("salts", "SALSA");
+        LetterResult[] guessResult= testGuessResult.getGuessResult();
+        assertEquals("GGGgY", getLetterResultArrayAsString(guessResult));
+    }
 
     @Test
     @DisplayName("Testing Guess: PAPER, Answer: APPLE")
