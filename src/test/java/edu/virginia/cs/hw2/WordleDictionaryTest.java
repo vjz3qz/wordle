@@ -43,4 +43,12 @@ public class WordleDictionaryTest {
         assertFalse(testDictionary.isLegalWordleWord("CRAB"), "returned CRAB true");
     }
 
+
+    @Test
+    @DisplayName("testing legal words: CRATE, crate")
+    public void testLegalWord()
+    {
+        assertTrue(testDictionary.isLegalWordleWord("CRATE"), "returned CRATE false");
+        assertTrue(testDictionary.isLegalWordleWord("crate"), "returned crate false");
+    }
 }
