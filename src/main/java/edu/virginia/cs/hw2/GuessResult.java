@@ -1,6 +1,6 @@
 package edu.virginia.cs.hw2;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class GuessResult {
     public static final int GUESS_RESULT_ARRAY_SIZE = 5;
@@ -37,19 +37,29 @@ public class GuessResult {
 
     public LetterResult[] getGuessResult() {
         verifyAllFieldsAreInitialized();
-        if (guess.equals(answer)) {
+        if (guess.equals(answer))
             return getCorrectAnswerArray();
-        }
-        int already_used=0;
+        Set<Integer> usedAnswerIndices = new HashSet<>();
         for (int i = 0; i < GUESS_RESULT_ARRAY_SIZE; i++) {
             char ch = guess.charAt(i); //gets character at each index
             if(answer.charAt(i)==ch)
+            {
                 guessResult[i]=LetterResult.GREEN;
-            else if(answer.indexOf(ch)>=0)
-                if(guess.indexOf(ch)==i)
+                usedAnswerIndices.add(i);
+            }
+            else if(answer.indexOf(ch)>=0){ //if exists
+                int indexOfNextCh = -1; //index of the next occurrence in the answer
+                for (int j = 0; j < answer.length(); j++) { //iterator of answer
+                    if (!usedAnswerIndices.contains(j) && answer.charAt(j) == ch)
+                        indexOfNextCh = j;
+                }
+                if (indexOfNextCh != -1) { //if there is another occurrence of that letter in the answer
                     guessResult[i]=LetterResult.YELLOW;
+                    usedAnswerIndices.add(indexOfNextCh);
+                }
                 else
                     guessResult[i]=LetterResult.GRAY;
+            }
             else
                 guessResult[i]=LetterResult.GRAY;
         }
