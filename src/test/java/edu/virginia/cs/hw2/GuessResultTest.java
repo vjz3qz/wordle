@@ -49,8 +49,7 @@ class GuessResultTest {
     public void testLetterResultIllegalAnswer()
     {
         givenInputGuessAndAnswer("crab", "CRATE");
-        LetterResult[] guessResult = testGuessResult.getGuessResult();
-        assertEquals("gYYYg", getLetterResultArrayAsString(guessResult));
+        assertThrows(IllegalStateException.class,()->testGuessResult.getGuessResult());
     }
 
     private void givenInputGuessAndAnswer(String guess, String answer) {
