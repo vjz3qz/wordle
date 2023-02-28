@@ -44,7 +44,7 @@ class GuessResultTest {
     }
 
     @Test
-    @DisplayName("Additional same letter in fourth spot(salsa)")
+    @DisplayName("Guess: SALSA, answer: SALTS")
     public void testSalsaCase(){
         givenInputGuessAndAnswer("salsa", "SALTS");
         LetterResult[] guessResult= testGuessResult.getGuessResult();
