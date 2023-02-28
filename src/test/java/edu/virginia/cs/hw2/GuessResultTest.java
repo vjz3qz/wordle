@@ -45,6 +45,15 @@ class GuessResultTest {
     }
 
     @Test
+    @DisplayName("testing answer with repeat letters")
+    public void testRepeatLettersAnswer()
+    {
+        givenInputGuessAndAnswer("paper", "APPLE");
+        LetterResult[] guessResult = testGuessResult.getGuessResult();
+        assertEquals("YYGYg", getLetterResultArrayAsString(guessResult));
+    }
+
+    @Test
     @DisplayName("setting an illegal guess test")
     public void testIllegalGuessSet()
     {
