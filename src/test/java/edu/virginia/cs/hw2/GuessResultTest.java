@@ -90,6 +90,14 @@ class GuessResultTest {
         LetterResult[] guessResult = testGuessResult.getGuessResult();
         assertEquals("GGYgg", getLetterResultArrayAsString(guessResult));
     }
+    @Test
+    @DisplayName("tests Guess: SALTS, Answer: SASSY")
+    public void testThreeRepeatLettersGuessOther()
+    {
+        givenInputGuessAndAnswer("SALTS", "sassy");
+        LetterResult[] guessResult = testGuessResult.getGuessResult();
+        assertEquals("GGggY", getLetterResultArrayAsString(guessResult));
+    }
 
     @Test
     @DisplayName("setting an illegal guess test")
