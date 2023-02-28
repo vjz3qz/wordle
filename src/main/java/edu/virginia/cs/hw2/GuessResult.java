@@ -45,7 +45,10 @@ public class GuessResult {
             if(answer.charAt(i)==ch)
                 guessResult[i]=LetterResult.GREEN;
             else if(answer.indexOf(ch)>=0)
-                guessResult[i]=LetterResult.YELLOW;
+                if(guess.indexOf(ch)==i)
+                    guessResult[i]=LetterResult.YELLOW;
+                else
+                    guessResult[i]=LetterResult.GRAY;
             else
                 guessResult[i]=LetterResult.GRAY;
         }
