@@ -33,4 +33,14 @@ public class WordleDictionaryTest {
         assertFalse(testDictionary.containsWord("BALDY"), "returned Contains BALDY when empty");
     }
 
+    @Test
+    @DisplayName("testing illegal words: A123Z, !KALE, crate, null, and CRAB")
+    public void testIllegalWord()
+    {
+        assertFalse(testDictionary.isLegalWordleWord("A123Z"), "returned A123Z true");
+        assertFalse(testDictionary.isLegalWordleWord("!KALE"), "returned !KALE true");
+        assertFalse(testDictionary.isLegalWordleWord(null), "returned null true");
+        assertFalse(testDictionary.isLegalWordleWord("CRAB"), "returned CRAB true");
+    }
+
 }
