@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GuessResultTest {
+    //getGuessResult setGuess getGuess setAnswer getAnswer
 
     private GuessResult testGuessResult;
 
@@ -32,6 +33,15 @@ class GuessResultTest {
         LetterResult[] guessResult = testGuessResult.getGuessResult();
 
         assertEquals("GGGGG", getLetterResultArrayAsString(guessResult));
+    }
+
+    @Test
+    @DisplayName("incorrect guess result test")
+    public void testLetterResultIncorrectAnswer()
+    {
+        givenInputGuessAndAnswer("MATCH", "CRATE");
+        LetterResult[] guessResult = testGuessResult.getGuessResult();
+        assertEquals("gYYYg", getLetterResultArrayAsString(guessResult));
     }
 
     private void givenInputGuessAndAnswer(String guess, String answer) {
@@ -68,7 +78,7 @@ class GuessResultTest {
     }
 
     @Test
-    @DisplayName("LetterResult.Gray -> `Y`")
+    @DisplayName("LetterResult.Gray -> `g`")
     public void testGetCharacterForLetterResult_Gray() {
         assertEquals('g', getCharacterForLetterResult(LetterResult.GRAY));
     }
