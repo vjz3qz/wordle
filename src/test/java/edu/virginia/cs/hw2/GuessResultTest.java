@@ -54,12 +54,21 @@ class GuessResultTest {
     }
 
     @Test
-    @DisplayName("testing guess with repeat letters")
-    public void testRepeatLettersGuess()
+    @DisplayName("testing guess with repeat letters, one in the right spot")
+    public void testRepeatLettersGuessOneRight()
     {
         givenInputGuessAndAnswer("paper", "plate");
         LetterResult[] guessResult = testGuessResult.getGuessResult();
         assertEquals("GYgYg", getLetterResultArrayAsString(guessResult));
+    }
+
+    @Test
+    @DisplayName("repeated letters in guess in the wrong spot")
+    public void testRepeatLettersGuessNoneRight()
+    {
+        givenInputGuessAndAnswer("teeth", "apple");
+        LetterResult[] guessResult = testGuessResult.getGuessResult();
+        assertEquals("gYggg", getLetterResultArrayAsString(guessResult));
     }
 
     @Test
