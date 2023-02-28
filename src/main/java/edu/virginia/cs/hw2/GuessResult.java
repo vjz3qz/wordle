@@ -24,8 +24,11 @@ public class GuessResult {
     public void setGuess(String guess) {
         if(WordleDictionary.isLegalWordleWord(guess))
             this.guess = guess.toUpperCase();
-        else
+        else {
             this.guess = null;
+            IllegalWordException e=new IllegalWordException("Guess parameter is illegal. Guess is set to null. Please input a new guess.");
+            throw e;
+        }
     }
 
     public LetterResult[] getGuessResult() {
