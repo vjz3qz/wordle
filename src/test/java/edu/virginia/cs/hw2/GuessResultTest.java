@@ -51,7 +51,8 @@ class GuessResultTest {
         assertEquals("GGGYg", getLetterResultArrayAsString(guessResult));
     }
 
-
+    @Test
+    @DisplayName("Testing Guess: PAPER, Answer: APPLE")
     public void testRepeatLettersAnswer() {
         givenInputGuessAndAnswer("paper", "APPLE");
         LetterResult[] guessResult = testGuessResult.getGuessResult();
