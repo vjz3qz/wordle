@@ -40,6 +40,7 @@ public class GuessResult {
         if (guess.equals(answer)) {
             return getCorrectAnswerArray();
         }
+        int already_used=0;
         for (int i = 0; i < GUESS_RESULT_ARRAY_SIZE; i++) {
             char ch = guess.charAt(i); //gets character at each index
             if(answer.charAt(i)==ch)

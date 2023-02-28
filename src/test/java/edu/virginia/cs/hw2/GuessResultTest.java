@@ -44,7 +44,14 @@ class GuessResultTest {
     }
 
     @Test
-    @DisplayName("testing answer with repeat letters")
+    @DisplayName("Additional same letter in fourth spot(salsa)")
+    public void testSalsaCase(){
+        givenInputGuessAndAnswer("salsa", "SALTS");
+        LetterResult[] guessResult= testGuessResult.getGuessResult();
+        assertEquals("GGGYg", getLetterResultArrayAsString(guessResult));
+    }
+
+
     public void testRepeatLettersAnswer() {
         givenInputGuessAndAnswer("paper", "APPLE");
         LetterResult[] guessResult = testGuessResult.getGuessResult();
@@ -128,6 +135,8 @@ class GuessResultTest {
     public void testGetCharacterForLetterResult_Gray() {
         assertEquals('g', getCharacterForLetterResult(LetterResult.GRAY));
     }
+
+
 
     private static char getCharacterForLetterResult(LetterResult letterResult) {
         return switch(letterResult) {
