@@ -48,25 +48,25 @@ public class WordleDictionary {
     }
 
     public boolean isLegalWordleWord(String word) {
-        if (word == null) {
+        if (word == null)
             return false;
-        } else if (word.length() == ALLOWED_WORD_SIZE) {
-            word.toUpperCase();
-            for (int i = 0; i <= ALLOWED_WORD_SIZE; i++) {
+
+
+        else if (word.length() != ALLOWED_WORD_SIZE) //wrong size word
+            return false;
+        else {
+            word = word.toUpperCase();
+            for (int i = 0; i < ALLOWED_WORD_SIZE; i++) {
                 char ch = word.charAt(i);
-                if (ch < 'A') {
+                if (ch < 'A' || ch > 'Z')
                     return false;
-                } else if (ch < 'Z') {
-                    return true;
-                } else {
-                    return false;
-                }
             }
-        } else {
-            return false;
+            return true;
         }
-        return false;
+
+
     }
+
 
     public void addWord(String word) {
         if (!isLegalWordleWord(word)) {
