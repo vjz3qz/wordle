@@ -50,17 +50,18 @@ public class WordleDictionary {
     public boolean isLegalWordleWord(String word) {
         if (word == null)
             return false;
-        else if (word.length() == ALLOWED_WORD_SIZE) {
-            word=word.toUpperCase();
+
+        else if (word.length() != ALLOWED_WORD_SIZE) //wrong size word
+            return false;
+        else {
+            word = word.toUpperCase();
             for (int i = 0; i < ALLOWED_WORD_SIZE; i++) {
                 char ch = word.charAt(i);
-                if(ch <'A' || ch>'Z')
+                if (ch < 'A' || ch > 'Z')
                     return false;
             }
             return true;
         }
-        else //wrong size word
-            return false;
 
     }
 

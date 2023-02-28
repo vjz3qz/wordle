@@ -22,7 +22,7 @@ public class WordleDictionaryTest {
     public void testOneWordDictionary() {
         InputStream inputStream = WordleDictionaryTest.class.getResourceAsStream(ONE_WORD_DICTIONARY_FILENAME);
         testDictionary.addWordsFromInputStream(inputStream);
-        //assertEquals(1, testDictionary.getDictionarySize(), "returned dict size other than 1");
+        assertEquals(1, testDictionary.getDictionarySize(), "returned dict size other than 1");
         assertTrue(testDictionary.containsWord("BALDY"), "returned contains BALDY as False");
         assertFalse(testDictionary.containsWord("CRATE"), "returned contains CRATE as True");
     }
@@ -51,5 +51,23 @@ public class WordleDictionaryTest {
     {
         assertTrue(testDictionary.isLegalWordleWord("CRATE"), "returned CRATE false");
         assertTrue(testDictionary.isLegalWordleWord("crate"), "returned crate false");
+    }
+
+    @Test
+    @DisplayName("adding illegal words")
+    public void testAddIllegalWord()
+    {
+        assertThrows(IllegalWordException.class,()->testDictionary.addWord("A123Z"));
+        assertThrows(IllegalWordException.class,()->testDictionary.addWord("!kale"));
+        assertThrows(IllegalWordException.class,()->testDictionary.addWord(null));
+        assertThrows(IllegalWordException.class,()->testDictionary.addWord("crab"));
+    }
+
+    @Test
+    @DisplayName("add legal words")
+    public void testAddLegalWord()
+    {
+        assertDoesNotThrow(()->testDictionary.addWord("crate"));
+        assertDoesNotThrow(()->testDictionary.addWord("CRATE"));
     }
 }
