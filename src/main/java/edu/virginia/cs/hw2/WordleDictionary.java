@@ -47,7 +47,7 @@ public class WordleDictionary {
         return wordIterator.next();
     }
 
-    public boolean isLegalWordleWord(String word) {
+    public static boolean isLegalWordleWord(String word) {
         if (word == null)
             return false;
         else if (word.length() != ALLOWED_WORD_SIZE) //wrong size word

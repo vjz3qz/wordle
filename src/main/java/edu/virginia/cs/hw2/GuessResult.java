@@ -22,7 +22,10 @@ public class GuessResult {
     }
 
     public void setGuess(String guess) {
-        this.guess = guess.toUpperCase();
+        if(WordleDictionary.isLegalWordleWord(guess))
+            this.guess = guess.toUpperCase();
+        else
+            this.guess = null;
     }
 
     public LetterResult[] getGuessResult() {
