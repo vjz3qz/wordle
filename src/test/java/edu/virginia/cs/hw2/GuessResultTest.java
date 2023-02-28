@@ -45,11 +45,10 @@ class GuessResultTest {
     }
 
     @Test
-    @DisplayName("illegal guess result test")
-    public void testLetterResultIllegalAnswer()
+    @DisplayName("setting an illegal guess test")
+    public void testIllegalGuessSet()
     {
-        givenInputGuessAndAnswer("crab", "CRATE");
-        assertThrows(IllegalStateException.class,()->testGuessResult.getGuessResult());
+        assertThrows(IllegalStateException.class,()->givenInputGuessAndAnswer("crab", "CRATE"));
     }
 
     private void givenInputGuessAndAnswer(String guess, String answer) {
