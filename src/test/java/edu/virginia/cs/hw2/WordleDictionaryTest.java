@@ -24,4 +24,6 @@ public class WordleDictionaryTest {
         assertEquals(1, testDictionary.getDictionarySize());
         assertTrue(testDictionary.containsWord("BALDY"));
     }
+
+
 }

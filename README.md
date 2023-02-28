@@ -2,7 +2,7 @@
 
 ## Authors
 
-* Author 1 - netID 
+* Varun Pasupuleti - vjz3qz 
 * Author 2 - netID
 * Author 3 - netID
 
