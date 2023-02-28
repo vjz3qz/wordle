@@ -51,4 +51,15 @@ public class WordleDictionaryTest {
         assertTrue(testDictionary.isLegalWordleWord("CRATE"), "returned CRATE false");
         assertTrue(testDictionary.isLegalWordleWord("crate"), "returned crate false");
     }
+
+    @Test
+    @DisplayName("adding illegal words")
+    public void testAddIllegalWord()
+    {
+        assertThrows(IllegalWordException.class,()->testDictionary.addWord("A123Z"));
+        assertThrows(IllegalWordException.class,()->testDictionary.addWord("!kale"));
+        assertThrows(IllegalWordException.class,()->testDictionary.addWord(null));
+        assertThrows(IllegalWordException.class,()->testDictionary.addWord("crab"));
+    }
+
 }
