@@ -64,7 +64,7 @@ public class WordleDictionaryTest {
     }
 
     @Test
-    @DisplayName("add legal words")
+    @DisplayName("add legal words: crate and CRATE")
     public void testAddLegalWord()
     {
         assertDoesNotThrow(()->testDictionary.addWord("crate"));
