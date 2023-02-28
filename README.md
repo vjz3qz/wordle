@@ -3,7 +3,7 @@
 ## Authors
 
 * Varun Pasupuleti - vjz3qz
-* Author 2 - netID
+* Sunny Chanda - ufx2ju
 * Author 3 - netID
 
 
