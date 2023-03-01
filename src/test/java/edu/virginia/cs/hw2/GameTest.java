@@ -45,6 +45,13 @@ class GameTest {
     }
 
     @Test
+    @DisplayName("testing to make sure if illegal guess works by throwing")
+    public void testSubmitInvalidGuess()
+    {
+        assertThrows(IllegalWordException.class,()->testGame.submitGuess("1"));
+    }
+
+    @Test
     @DisplayName("testing to make sure if correct guess ends game in win")
     public void testSubmitCorrectGuess()
     {
