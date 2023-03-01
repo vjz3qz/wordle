@@ -38,12 +38,13 @@ class GameTest {
         LetterResult[] res=testGame.submitGuess("CRATE");
         assertNotNull(res);
         assertEquals(6,testGame.getGuessCount());
-        assertFalse(testGame.isGameOver());
+        assertTrue(testGame.isGameOver());
         assertFalse(testGame.isWin());
-        assertFalse(testGame.isLoss());
+        assertTrue(testGame.isLoss());
     }
 
     @Test
+    @DisplayName("testing to make sure if correct guess ends game in win")
     public void testSubmitCorrectGuess()
     {
         LetterResult[] res=testGame.submitGuess("Spare");
@@ -55,9 +56,10 @@ class GameTest {
     }
 
     @Test
+    @DisplayName("testing to make sure if wrong guess ends game in loss")
     public void testSubmitLastWrongGuess()
     {
-        LetterResult[] res=testGame.submitGuess("Spare");
+        LetterResult[] res=testGame.submitGuess("crate");
         assertNotNull(res);
         assertEquals(6,testGame.getGuessCount());
         assertTrue(testGame.isGameOver(), "said game is not over");
