@@ -64,7 +64,6 @@ public class GuessResult {
                 guessResult[i]=LetterResult.GRAY;
         }
         return guessResult;
-        //TODO: Currently incomplete - implement via TDD - Write Tests in GuessResultsTest.java
     }
 
     private void verifyAllFieldsAreInitialized() {

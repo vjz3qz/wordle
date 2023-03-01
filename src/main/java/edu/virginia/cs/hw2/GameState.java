@@ -87,7 +87,6 @@ public class GameState {
         if(guessCount==MAX_GUESSES && gameStatus.equals(GameStatus.PLAYING))
             gameStatus=GameStatus.LOST;
         return guessResult.getGuessResult();
-        //TODO: Stub - Implement method with TDD - tests must go in GameTest.java
     }
 
     protected enum GameStatus {
