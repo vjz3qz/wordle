@@ -81,7 +81,7 @@ public class GameState {
                 greenCount++;
         if(greenCount==5)
             gameStatus=GameStatus.WON;
-        if(guessCount==6 && gameStatus.equals(GameStatus.PLAYING))
+        if(guessCount==MAX_GUESSES && gameStatus.equals(GameStatus.PLAYING))
             gameStatus=GameStatus.LOST;
         return guessResult.getGuessResult();
         //TODO: Stub - Implement method with TDD - tests must go in GameTest.java
