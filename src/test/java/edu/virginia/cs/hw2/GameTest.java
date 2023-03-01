@@ -45,6 +45,15 @@ class GameTest {
     }
 
     @Test
+    @DisplayName("testing to make sure if illegal word works by throwing")
+    public void testSubmitInvalidWordGuess()
+    {
+        testGame=new GameState("spare");
+        assertThrows(IllegalWordException.class,
+                () -> testGame.submitGuess("QZXYX"));
+    }
+
+    @Test
     @DisplayName("testing to make sure if illegal guess works by throwing")
     public void testSubmitInvalidGuess()
     {
