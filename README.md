@@ -3,8 +3,8 @@
 ## Authors
 
 * Varun Pasupuleti - vjz3qz 
-* Author 2 - netID
-* Author 3 - netID
+* Sunny Chanda - ufx2ju
+* Nachiket Gusani - bya8tr
 
 
 ## High-Level Overview
