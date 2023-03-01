@@ -29,4 +29,10 @@ class GameTest {
         assertEquals(0,testGame.getGuessCount());
         assertFalse(testGame.isGameOver());
     }
+
+    @Test
+    public void testSubmitCorrectGuess()
+    {
+        assertNotNull(testGame.submitGuess("CRATE"));
+    }
 }
