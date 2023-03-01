@@ -12,7 +12,7 @@ class GameTest {
     @BeforeEach
     public void setupTestGame() {
         DefaultDictionaryFactory dictionary=new DefaultDictionaryFactory();
-        testGame = new GameState("Spare", dictionary.getDefaultGuessesDictionary(), 6, GameState.GameStatus.PLAYING);
+        testGame = new GameState("Spare", dictionary.getDefaultGuessesDictionary(), 5, GameState.GameStatus.PLAYING);
     }
 
     @Test
@@ -27,7 +27,7 @@ class GameTest {
     public void testConstructorWithLegalAnswer()
     {
         assertNotNull(testGame);
-        assertEquals(6,testGame.getGuessCount());
+        assertEquals(5,testGame.getGuessCount());
         assertFalse(testGame.isGameOver());
     }
 
@@ -37,7 +37,7 @@ class GameTest {
     {
         LetterResult[] res=testGame.submitGuess("CRATE");
         assertNotNull(res);
-        assertEquals(7,testGame.getGuessCount());
+        assertEquals(6,testGame.getGuessCount());
         assertTrue(testGame.isGameOver());
         assertFalse(testGame.isWin());
         assertTrue(testGame.isLoss());
@@ -49,7 +49,7 @@ class GameTest {
     {
         LetterResult[] res=testGame.submitGuess("Spare");
         assertNotNull(res);
-        assertEquals(7,testGame.getGuessCount());
+        assertEquals(6,testGame.getGuessCount());
         assertTrue(testGame.isGameOver(), "said game is not over");
         assertTrue(testGame.isWin(), "said game is not a win");
         assertFalse(testGame.isLoss(), "said game is a loss");
@@ -61,7 +61,7 @@ class GameTest {
     {
         LetterResult[] res=testGame.submitGuess("crate");
         assertNotNull(res);
-        assertEquals(7,testGame.getGuessCount());
+        assertEquals(6,testGame.getGuessCount());
         assertTrue(testGame.isGameOver(), "said game is not over");
         assertTrue(testGame.isLoss(), "said game is not a loss");
         assertFalse(testGame.isWin(), "said game is a win");
