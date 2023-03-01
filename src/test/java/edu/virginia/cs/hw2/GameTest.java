@@ -48,8 +48,8 @@ class GameTest {
         LetterResult[] res=testGame.submitGuess("Spare");
         assertNotNull(res);
         assertEquals(1,testGame.getGuessCount());
-        assertFalse(testGame.isGameOver());
-        assertFalse(testGame.isWin());
-        assertFalse(testGame.isLoss());
+        assertTrue(testGame.isGameOver(), "said game is not over");
+        assertTrue(testGame.isWin(), "said game is not a win");
+        assertFalse(testGame.isLoss(), "said game is a loss");
     }
 }
