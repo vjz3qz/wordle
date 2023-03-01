@@ -36,5 +36,8 @@ class GameTest {
         LetterResult[] res=testGame.submitGuess("CRATE");
         assertNotNull(res);
         assertEquals(1,testGame.getGuessCount());
+        assertFalse(testGame.isGameOver());
+        assertFalse(testGame.isWin());
+        assertFalse(testGame.isLoss());
     }
 }
