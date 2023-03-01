@@ -75,6 +75,12 @@ public class GameState {
         guessResult.setGuess(guess);
         guessResult.setAnswer(answer);
         guessCount++;
+        int greenCount=0;
+        for(int i=0; i<5;i++)
+            if(guessResult.getGuessResult()[i].equals(LetterResult.GREEN))
+                greenCount++;
+        if(greenCount==5)
+            gameStatus=GameStatus.WON;
         return guessResult.getGuessResult();
         //TODO: Stub - Implement method with TDD - tests must go in GameTest.java
     }
