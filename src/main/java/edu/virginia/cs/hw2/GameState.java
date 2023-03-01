@@ -8,7 +8,6 @@ public class GameState {
     private GameStatus gameStatus;
     private WordleDictionary legalGuessDictionary;
 
-
     protected GameState(String answer, WordleDictionary dictionary, int guessCount, GameStatus status) {
         this.answer = answer.toUpperCase();
         this.legalGuessDictionary = dictionary;
