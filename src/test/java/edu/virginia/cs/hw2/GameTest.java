@@ -31,6 +31,7 @@ class GameTest {
     }
 
     @Test
+    @DisplayName("testing to make sure if legal guess works")
     public void testSubmitValidGuess()
     {
         LetterResult[] res=testGame.submitGuess("CRATE");
