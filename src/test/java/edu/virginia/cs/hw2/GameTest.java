@@ -31,5 +31,4 @@ class GameTest {
         assertFalse(testGame.isGameOver());
     }
 
-
 }
