@@ -105,6 +105,12 @@ class GuessResultTest {
     {
         assertThrows(IllegalWordException.class,()->givenInputGuessAndAnswer("crab", "CRATE"));
     }
+    @Test
+    @DisplayName("setting an illegal guess test short words")
+    public void testTwoShortWords()
+    {
+        assertThrows(IllegalWordException.class,()->givenInputGuessAndAnswer("crab", "cart"));
+    }
 
     @Test
     @DisplayName("setting an illegal answer test")
