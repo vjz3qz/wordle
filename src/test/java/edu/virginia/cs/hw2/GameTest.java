@@ -11,7 +11,7 @@ class GameTest {
 
     @BeforeEach
     public void setupTestGame() {
-        testGame = new GameState();
+        testGame = new GameState("Spare");
     }
 
     @Test
@@ -32,6 +32,17 @@ class GameTest {
 
     @Test
     public void testSubmitValidGuess()
+    {
+        LetterResult[] res=testGame.submitGuess("CRATE");
+        assertNotNull(res);
+        assertEquals(1,testGame.getGuessCount());
+        assertFalse(testGame.isGameOver());
+        assertFalse(testGame.isWin());
+        assertFalse(testGame.isLoss());
+    }
+
+    @Test
+    public void testSubmitCorrectGuess()
     {
         LetterResult[] res=testGame.submitGuess("CRATE");
         assertNotNull(res);
