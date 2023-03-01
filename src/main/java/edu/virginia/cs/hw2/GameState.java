@@ -72,6 +72,9 @@ public class GameState {
 
     public LetterResult[] submitGuess(String guess) {
         GuessResult guessResult = new GuessResult();
+        if (!legalGuessDictionary.containsWord(guess)) {
+            throw new IllegalWordException(guess+" is an illegal guess not found in the dictionary");
+        }
         guessResult.setGuess(guess);
         guessResult.setAnswer(answer);
         guessCount++;
