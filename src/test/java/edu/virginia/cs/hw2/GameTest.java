@@ -44,8 +44,6 @@ class GameTest {
         assertFalse(testGame.isLoss());
     }
 
-
-
     @Test
     @DisplayName("testing to make sure if correct guess ends game in win")
     public void testSubmitCorrectGuess()
@@ -69,5 +67,4 @@ class GameTest {
         assertTrue(testGame.isLoss(), "said game is not a loss");
         assertFalse(testGame.isWin(), "said game is a win");
     }
-
 }
