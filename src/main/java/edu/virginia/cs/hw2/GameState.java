@@ -75,7 +75,7 @@ public class GameState {
         guessResult.setGuess(guess);
         guessResult.setAnswer(answer);
 
-        return null;
+        return guessResult.getGuessResult();
         //TODO: Stub - Implement method with TDD - tests must go in GameTest.java
     }
 
