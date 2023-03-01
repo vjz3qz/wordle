@@ -58,7 +58,7 @@ public class GuessResult {
                     usedAnswerIndices.add(indexOfNextCh);
                 }
                 else
-                    guessResult[i]=LetterResult.GRAY;
+                    guessResult[i]=LetterResult.GRAY; //
             }
             else
                 guessResult[i]=LetterResult.GRAY;
