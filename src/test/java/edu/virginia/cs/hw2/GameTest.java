@@ -19,7 +19,10 @@ class GameTest {
     @DisplayName("Checking If Legal Answer Works")
     public void testConstructorWithLegalAnswer()
     {
-        assertNotNull(new GameState("Crate"));
+        GameState game = new GameState("Crate");
+        assertNotNull(game);
+        assertEquals(0,game.getGuessCount());
+        assertFalse(game.isGameOver());
     }
 
 
