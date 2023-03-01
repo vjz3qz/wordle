@@ -33,6 +33,8 @@ class GameTest {
     @Test
     public void testSubmitCorrectGuess()
     {
-        assertNotNull(testGame.submitGuess("CRATE"));
+        LetterResult[] res=testGame.submitGuess("CRATE");
+        assertNotNull(res);
+        assertEquals(1,testGame.getGuessCount());
     }
 }
