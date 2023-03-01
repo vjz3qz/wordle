@@ -31,7 +31,7 @@ public class GuessResult {
             this.guess = guess.toUpperCase();
         else {
             this.guess = null;
-            throw new IllegalWordException("Guess parameter is illegal. Guess is set to null. Please input a new guess.");
+            throw new IllegalWordException("Guess parameter is illegal. Please input a new guess.");
         }
     }
 

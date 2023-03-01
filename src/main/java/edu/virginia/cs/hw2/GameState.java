@@ -70,11 +70,12 @@ public class GameState {
     }
 
     public LetterResult[] submitGuess(String guess) {
+        if(!(gameStatus.equals(GameStatus.PLAYING)))
+            throw new GameAlreadyOverException("Cannot submit guess! Game already over!");
         GuessResult guessResult = new GuessResult();
-        if (!legalGuessDictionary.containsWord(guess)) {
-            throw new IllegalWordException(guess+" is an illegal guess not found in the dictionary");
-        }
         guessResult.setGuess(guess);
+        if (!legalGuessDictionary.containsWord(guessResult.getGuess()))
+            throw new IllegalWordException(guess+" is an illegal guess not found in the dictionary!");
         guessResult.setAnswer(answer);
         guessCount++;
         int greenCount=0;
