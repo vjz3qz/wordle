@@ -31,7 +31,7 @@ class GameTest {
     }
 
     @Test
-    public void testSubmitCorrectGuess()
+    public void testSubmitValidGuess()
     {
         LetterResult[] res=testGame.submitGuess("CRATE");
         assertNotNull(res);
