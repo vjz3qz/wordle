@@ -12,4 +12,10 @@ class GameTest {
         assertThrows(IllegalWordException.class,
                 () -> new GameState("QZXYX"));
     }
+
+    @Test
+    public void testConstructorWithLegalAnswer()
+    {
+        assertNotNull(new GameState("Crate"));
+    }
 }
