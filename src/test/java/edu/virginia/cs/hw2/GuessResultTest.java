@@ -126,6 +126,13 @@ class GuessResultTest {
         assertThrows(IllegalWordException.class,()->givenInputGuessAndAnswer("2", "hello"));
     }
 
+    @Test
+    @DisplayName("setting an illegal answer test")
+    public void testIllegalAnswerandGuessNumber()
+    {
+        assertThrows(IllegalWordException.class,()->givenInputGuessAndAnswer("2", "2"));
+    }
+
     private void givenInputGuessAndAnswer(String guess, String answer) {
         testGuessResult.setGuess(guess);
         testGuessResult.setAnswer(answer);
