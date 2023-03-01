@@ -45,7 +45,7 @@ class GameTest {
     @Test
     public void testSubmitCorrectGuess()
     {
-        LetterResult[] res=testGame.submitGuess("CRATE");
+        LetterResult[] res=testGame.submitGuess("Spare");
         assertNotNull(res);
         assertEquals(1,testGame.getGuessCount());
         assertFalse(testGame.isGameOver());
