@@ -89,6 +89,7 @@ public class GameState {
         return guessResult.getGuessResult();
     }
 
+
     protected enum GameStatus {
         PLAYING, WON, LOST;
     }
