@@ -4,7 +4,7 @@
 
 * Varun Pasupuleti - vjz3qz 
 * Sunny Chanda - ufx2ju
-* Nachiket Gusani - bya8tr
+* Nachiket Gusani - bya8tr 
 
 
 ## High-Level Overview
