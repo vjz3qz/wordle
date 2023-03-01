@@ -35,13 +35,16 @@ class GameTest {
     @DisplayName("testing to make sure if legal guess works")
     public void testSubmitValidGuess()
     {
+        testGame=new GameState("spare");
         LetterResult[] res=testGame.submitGuess("CRATE");
         assertNotNull(res);
-        assertEquals(6,testGame.getGuessCount());
-        assertTrue(testGame.isGameOver());
+        assertEquals(1,testGame.getGuessCount());
+        assertFalse(testGame.isGameOver());
         assertFalse(testGame.isWin());
-        assertTrue(testGame.isLoss());
+        assertFalse(testGame.isLoss());
     }
+
+
 
     @Test
     @DisplayName("testing to make sure if correct guess ends game in win")
@@ -66,4 +69,5 @@ class GameTest {
         assertTrue(testGame.isLoss(), "said game is not a loss");
         assertFalse(testGame.isWin(), "said game is a win");
     }
+
 }
