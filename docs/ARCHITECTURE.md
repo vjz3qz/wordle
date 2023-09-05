@@ -2,9 +2,9 @@
 
 
 ## High-Level Overview
-All classes are in the package edu.virginia.cs.hw2. Here are the structure of the starter code:
+All classes are in the package edu.virginia.cs. 
 * **Main Class:**
-  * `CommandLineWordle` - when you start the assignment, this will be unrunnable. Once you complete the assignment, you should be able to run this file to play Wordle. Consider this your "System test" class.
+  * `CommandLineWordle` - used to run this file to play Wordle.
 * **Core Functionality Classes:**
   * `GameState` - maintains the state of a Wordle Game.
   * `WordleDictionary` - used for maintaining a set of words, such as words that are legal guesses in Wordle. Words are typically added via file.
