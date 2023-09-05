@@ -1,4 +1,4 @@
-package edu.virginia.cs.hw2;
+package edu.virginia.cs;
 
 import java.util.*;
 import java.io.*;

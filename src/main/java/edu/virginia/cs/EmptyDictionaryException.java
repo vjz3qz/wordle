@@ -1,4 +1,4 @@
-package edu.virginia.cs.hw2;
+package edu.virginia.cs;
 
 public class EmptyDictionaryException extends IllegalStateException {
     public EmptyDictionaryException(String message) {

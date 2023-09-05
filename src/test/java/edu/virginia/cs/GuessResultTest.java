@@ -1,4 +1,4 @@
-package edu.virginia.cs.hw2;
+package edu.virginia.cs;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
